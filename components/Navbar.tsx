@@ -37,7 +37,7 @@ export default function Navbar() {
           href="#about"
           className="text-lg font-bold text-cyan-600 dark:text-cyan-400 tracking-tight hover:text-cyan-500 dark:hover:text-cyan-300 transition-colors"
         >
-          Siddarth.dev
+          Siddarth Ambannavar
         </a>
 
         {/* Desktop links + toggle */}
