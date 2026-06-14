@@ -2,8 +2,9 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   devIndicators: false,
-  output: "export",          // static HTML export
-  images: { unoptimized: true }, // GitHub Pages can't run Next.js image optimisation
+  output: "export",
+  basePath: "/Siddarth-Ambannavar-Portfolio",  // must match your GitHub repo name exactly
+  images: { unoptimized: true },
 };
 
 export default nextConfig;
