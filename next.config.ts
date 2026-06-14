@@ -3,7 +3,7 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   devIndicators: false,
   output: "export",
-  basePath: "/Siddarth-Ambannavar-Portfolio",  // must match your GitHub repo name exactly
+  basePath: "/siddarth-ba-72-portfolio",  // must match your GitHub repo name exactly
   images: { unoptimized: true },
 };
 
