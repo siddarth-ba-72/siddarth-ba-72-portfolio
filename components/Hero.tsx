@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { Mail } from "lucide-react";
 
 function GithubIcon({ size = 22 }: { size?: number }) {
@@ -86,13 +85,11 @@ export default function Hero() {
                     <div className="relative w-64 h-64 md:w-80 md:h-80 select-none">
                         {/* Decorative ring */}
                         <div className="absolute inset-0 rounded-full border-2 border-cyan-400/30 scale-110" />
-                        <Image
-                            src="/siddarth_ba_72.png"
+                        <img
+                            src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/siddarth_ba_72.png`}
                             alt="Siddarth Ambannavar"
-                            fill
                             draggable={false}
-                            className="rounded-full object-cover object-top border-4 border-slate-300 dark:border-slate-700 pointer-events-none"
-                            priority
+                            className="absolute inset-0 w-full h-full rounded-full object-cover object-top border-4 border-slate-300 dark:border-slate-700 pointer-events-none"
                         />
                         {/* Transparent overlay — prevents right-click save */}
                         <div

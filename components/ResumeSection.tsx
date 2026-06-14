@@ -24,7 +24,7 @@ export default function ResumeSection() {
           collaborations. Download my resume or reach out directly.
         </p>
         <a
-          href="/Siddarth_Ambannavar_Resume.pdf"
+          href={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/Siddarth_Ambannavar_Resume.pdf`}
           download
           className="inline-flex items-center gap-2 bg-cyan-500 hover:bg-cyan-400 text-slate-900 font-semibold px-7 py-3 rounded-lg transition-colors duration-200 shadow-lg shadow-cyan-500/20"
         >
