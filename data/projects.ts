@@ -17,5 +17,13 @@ export const projects: Project[] = [
     techStack: ["Spring Boot", "React", "MongoDB", "FastAPI", "OpenAI API"],
     githubUrl: "https://github.com/siddarth-ba-72/Talent-Lens-AI",
     liveUrl: "https://talentlens-tawny.vercel.app/login",
+  },
+  {
+    title: "Interview Prep-Pilot-AI",
+    description:
+      "Prep-Pilot helps you walk into your next interview ready. Create a topic, learn it with an AI tutor in Learn/Chat Mode, then stress-test yourself in Test Mode with auto-generated questions and instant scoring, and finish with a Mock Interview featuring sequential Q&A and real-time evaluation.",
+    techStack: ["Spring Boot", "React", "MongoDB", "FastAPI", "OpenAI API"],
+    githubUrl: "https://github.com/siddarth-ba-72/Interview-Prep-Pilot-AI",
+    liveUrl: "https://prep-pilot-sable-one.vercel.app/dashboard",
   }
 ];
