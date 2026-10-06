@@ -1,51 +1,77 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Layers } from "lucide-react";
+import {
+  Braces,
+  BrainCircuit,
+  Database,
+  Layers,
+  PanelsTopLeft,
+  Server,
+  Workflow,
+  type LucideIcon,
+} from "lucide-react";
 import { skillCategories } from "@/data/skills";
+import SectionHeading from "./SectionHeading";
+import SpotlightCard from "./SpotlightCard";
+
+// Icons per category label; unknown labels fall back to Layers.
+const categoryIcons: Record<string, LucideIcon> = {
+  Languages: Braces,
+  Backend: Server,
+  Frontend: PanelsTopLeft,
+  Database: Database,
+  DevOps: Workflow,
+  "AI / Emerging": BrainCircuit,
+};
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-24 px-6">
-      <div className="max-w-4xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-        >
-          <h2 className="text-2xl md:text-3xl font-bold text-slate-900 dark:text-slate-100 mb-2 flex items-center gap-3">
-            <Layers size={24} className="text-cyan-600 dark:text-cyan-400" />
-            Skills
-          </h2>
-          <div className="h-px bg-slate-200 dark:bg-slate-700 mb-12" />
-        </motion.div>
+    <section id="skills" className="relative py-28 px-6">
+      <div className="max-w-6xl mx-auto">
+        <SectionHeading
+          index="01"
+          eyebrow="Skills"
+          title={<>Tools of the <span className="text-gradient">trade</span></>}
+          description="The languages, frameworks and platforms I use to design, build and ship reliable software."
+        />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {skillCategories.map((category, i) => (
-            <motion.div
-              key={category.label}
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: i * 0.07 }}
-              className="bg-white dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 rounded-xl p-5 shadow-sm dark:shadow-none hover:border-cyan-400/50 transition-colors"
-            >
-              <h3 className="text-xs font-semibold uppercase tracking-widest text-cyan-600 dark:text-cyan-400 mb-4">
-                {category.label}
-              </h3>
-              <div className="flex flex-wrap gap-2">
-                {category.skills.map((skill) => (
-                  <span
-                    key={skill}
-                    className="text-sm text-slate-700 dark:text-slate-300 bg-slate-100 dark:bg-slate-700/60 border border-slate-200 dark:border-slate-600 px-3 py-1 rounded-full"
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
-            </motion.div>
-          ))}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {skillCategories.map((category, i) => {
+            const Icon = categoryIcons[category.label] ?? Layers;
+            return (
+              <motion.div
+                key={category.label}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.45, delay: i * 0.06 }}
+                className="h-full"
+              >
+                <SpotlightCard className="h-full p-6 hover:-translate-y-1">
+                  <div className="flex items-center gap-3 mb-5">
+                    <span className="grid h-10 w-10 place-items-center rounded-xl border border-line bg-foreground/[0.04] text-accent transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-6">
+                      <Icon size={18} />
+                    </span>
+                    <h3 className="font-display text-lg font-semibold">{category.label}</h3>
+                    <span className="ml-auto font-mono text-xs text-muted">
+                      {String(category.skills.length).padStart(2, "0")}
+                    </span>
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    {category.skills.map((skill) => (
+                      <span
+                        key={skill}
+                        className="rounded-lg border border-line bg-foreground/[0.03] px-2.5 py-1 text-sm text-foreground/80 transition-colors hover:border-accent/50 hover:text-foreground"
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </SpotlightCard>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

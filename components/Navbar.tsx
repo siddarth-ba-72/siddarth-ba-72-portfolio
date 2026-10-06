@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
 
@@ -17,77 +18,115 @@ const navLinks = [
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [active, setActive] = useState("#about");
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", onScroll);
+    window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Highlight the link for whichever section crosses a band just above mid-viewport
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) setActive(`#${entry.target.id}`);
+        }
+      },
+      { rootMargin: "-40% 0px -55% 0px" }
+    );
+    for (const { href } of navLinks) {
+      const section = document.querySelector(href);
+      if (section) observer.observe(section);
+    }
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-white/95 dark:bg-slate-900/95 backdrop-blur shadow-lg"
-          : "bg-transparent"
-      }`}
-    >
-      <nav className="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
-        <a
-          href="#about"
-          className="text-lg font-bold text-cyan-600 dark:text-cyan-400 tracking-tight hover:text-cyan-500 dark:hover:text-cyan-300 transition-colors"
-        >
-          Siddarth Ambannavar
+    <header className="fixed inset-x-0 top-0 z-50 px-4 pt-4">
+      <nav
+        className={`mx-auto max-w-6xl flex items-center justify-between rounded-2xl border px-3 py-2.5 transition-all duration-300 ${
+          scrolled || menuOpen
+            ? "border-line bg-background/70 backdrop-blur-xl shadow-lg shadow-slate-900/5 dark:shadow-black/40"
+            : "border-transparent"
+        }`}
+      >
+        <a href="#about" className="flex items-center gap-2.5" aria-label="Siddarth Ambannavar — home">
+          <span className="grid h-9 w-9 place-items-center rounded-xl bg-brand-strong font-display text-sm font-bold text-white shadow-lg shadow-violet-500/25">
+            SA
+          </span>
+          <span className="hidden sm:block font-display font-semibold tracking-tight">
+            Siddarth<span className="text-accent">.</span>
+          </span>
         </a>
 
-        {/* Desktop links + toggle */}
-        <div className="hidden md:flex items-center gap-6">
-          <ul className="flex items-center gap-8">
-            {navLinks.map((link) => (
-              <li key={link.href}>
-                <a
-                  href={link.href}
-                  className="text-slate-600 dark:text-slate-300 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors text-sm font-medium"
-                >
-                  {link.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-          <ThemeToggle />
-        </div>
+        {/* Desktop links */}
+        <ul className="hidden lg:flex items-center gap-1">
+          {navLinks.map((link) => (
+            <li key={link.href}>
+              <a
+                href={link.href}
+                className={`relative isolate block rounded-full px-3.5 py-1.5 text-sm font-medium transition-colors ${
+                  active === link.href ? "text-foreground" : "text-muted hover:text-foreground"
+                }`}
+              >
+                {active === link.href && (
+                  <motion.span
+                    layoutId="nav-active"
+                    className="absolute inset-0 -z-10 rounded-full border border-line bg-foreground/[0.06]"
+                    transition={{ type: "spring", bounce: 0.2, duration: 0.5 }}
+                  />
+                )}
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
 
-        {/* Mobile: toggle + hamburger */}
-        <div className="md:hidden flex items-center gap-2">
+        <div className="flex items-center gap-2">
           <ThemeToggle />
           <button
-            className="text-slate-600 dark:text-slate-300 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors"
+            className="lg:hidden w-9 h-9 grid place-items-center rounded-xl border border-line bg-card text-muted hover:text-accent transition-colors"
             onClick={() => setMenuOpen((o) => !o)}
             aria-label="Toggle menu"
+            aria-expanded={menuOpen}
           >
-            {menuOpen ? <X size={22} /> : <Menu size={22} />}
+            {menuOpen ? <X size={18} /> : <Menu size={18} />}
           </button>
         </div>
       </nav>
 
       {/* Mobile menu */}
-      {menuOpen && (
-        <div className="md:hidden bg-white/98 dark:bg-slate-900/98 border-t border-slate-200 dark:border-slate-800 px-6 pb-4">
-          <ul className="flex flex-col gap-4 pt-4">
-            {navLinks.map((link) => (
-              <li key={link.href}>
-                <a
-                  href={link.href}
-                  className="text-slate-600 dark:text-slate-300 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors text-sm font-medium block"
-                  onClick={() => setMenuOpen(false)}
-                >
-                  {link.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
+      <AnimatePresence>
+        {menuOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.2 }}
+            className="lg:hidden mx-auto mt-2 max-w-6xl rounded-2xl border border-line bg-background/90 backdrop-blur-xl p-2 shadow-xl shadow-slate-900/10 dark:shadow-black/50"
+          >
+            <ul className="flex flex-col">
+              {navLinks.map((link) => (
+                <li key={link.href}>
+                  <a
+                    href={link.href}
+                    onClick={() => setMenuOpen(false)}
+                    className={`block rounded-xl px-4 py-3 text-sm font-medium transition-colors ${
+                      active === link.href
+                        ? "bg-foreground/[0.06] text-foreground"
+                        : "text-muted hover:text-foreground"
+                    }`}
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 }

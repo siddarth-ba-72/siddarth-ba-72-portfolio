@@ -1,7 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Briefcase, MapPin, Wifi } from "lucide-react";
+import { MapPin, Wifi } from "lucide-react";
+import SectionHeading from "./SectionHeading";
+import SpotlightCard from "./SpotlightCard";
 
 interface Role {
   title: string;
@@ -37,77 +39,97 @@ const experiences: Organization[] = [
 
 export default function Experience() {
     return (
-        <section id="experience" className="py-24 px-6">
-            <div className="max-w-3xl mx-auto">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5 }}
-                >
-                    <h2 className="text-2xl md:text-3xl font-bold text-slate-900 dark:text-slate-100 mb-2 flex items-center gap-3">
-                        <Briefcase size={24} className="text-cyan-600 dark:text-cyan-400" />
-                        Work Experience
-                    </h2>
-                    <div className="h-px bg-slate-200 dark:bg-slate-700 mb-12" />
-                </motion.div>
+        <section id="experience" className="relative py-28 px-6">
+            <div className="max-w-4xl mx-auto">
+                <SectionHeading
+                    index="02"
+                    eyebrow="Experience"
+                    title={<>Where I&apos;ve <span className="text-gradient">worked</span></>}
+                />
 
                 <div className="flex flex-col gap-8">
                     {experiences.map((org, i) => (
                         <motion.div
                             key={i}
-                            initial={{ opacity: 0, y: 20 }}
+                            initial={{ opacity: 0, y: 24 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: i * 0.1 }}
                         >
-                            <div className="bg-white dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 rounded-xl p-6 hover:border-cyan-400/40 transition-colors shadow-sm dark:shadow-none">
+                            <SpotlightCard className="p-6 md:p-8">
 
                                 {/* Org header */}
-                                <div className="flex flex-wrap items-center gap-2 mb-5">
-                                    <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100 flex-1">
-                                        {org.company}
-                                    </h3>
-                                    <span className="flex items-center gap-1 text-xs text-slate-500 dark:text-slate-400">
-                                        <MapPin size={12} className="text-cyan-400" />
-                                        {org.location}
+                                <div className="flex flex-wrap items-center gap-4 mb-8">
+                                    <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-brand-strong font-display text-lg font-bold text-white shadow-lg shadow-violet-500/20">
+                                        {org.company[0]}
+                                    </span>
+                                    <div className="flex-1 min-w-0">
+                                        <h3 className="font-display text-xl md:text-2xl font-semibold tracking-tight">
+                                            {org.company}
+                                        </h3>
+                                        <p className="mt-0.5 flex items-center gap-1.5 text-sm text-muted">
+                                            <MapPin size={13} className="text-accent" />
+                                            {org.location}
+                                        </p>
+                                    </div>
+                                    <span className="rounded-full border border-line px-3 py-1 font-mono text-xs text-muted whitespace-nowrap">
+                                        {org.roles[org.roles.length - 1].from} – {org.roles[0].to}
                                     </span>
                                 </div>
 
                                 {/* Designation timeline */}
-                                <div className="relative pl-5 border-l border-slate-300 dark:border-slate-600 flex flex-col gap-4 mb-6">
-                                    {org.roles.map((role, j) => (
-                                        <div key={j} className="relative">
-                                            {/* dot */}
-                                            <span className="absolute -left-[1.45rem] top-1.5 w-2.5 h-2.5 rounded-full bg-cyan-400/80 border-2 border-slate-800" />
-                                            <div className="flex flex-wrap items-center gap-x-3 gap-y-0.5">
-                                                <span className="text-sm font-semibold text-slate-800 dark:text-slate-200">
-                                                    {role.title}
+                                <ol className="relative ml-1.5 mb-8 flex flex-col gap-6">
+                                    <span
+                                        aria-hidden="true"
+                                        className="absolute left-0 top-2 bottom-2 w-px bg-linear-to-b from-(--grad-1) via-(--grad-2) to-transparent"
+                                    />
+                                    {org.roles.map((role, j) => {
+                                        const current = role.to === "Present";
+                                        return (
+                                            <li key={j} className="relative pl-7">
+                                                {/* dot */}
+                                                <span className="absolute left-0 top-1.5 -translate-x-1/2">
+                                                    {current && (
+                                                        <span className="absolute -inset-1 rounded-full bg-accent/40 animate-ping" />
+                                                    )}
+                                                    <span
+                                                        className={`relative block h-3 w-3 rounded-full border-2 border-background ${
+                                                            current ? "bg-accent shadow-[0_0_12px_var(--accent)]" : "bg-muted/60"
+                                                        }`}
+                                                    />
                                                 </span>
-                                                <span className="text-xs font-mono text-cyan-400 bg-cyan-400/10 px-2 py-0.5 rounded-full whitespace-nowrap">
+                                                <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
+                                                    <span className="font-semibold">{role.title}</span>
+                                                    {current && (
+                                                        <span className="rounded-full bg-accent/10 px-2 py-0.5 font-mono text-[10px] uppercase tracking-wider text-accent">
+                                                            Current
+                                                        </span>
+                                                    )}
+                                                    {role.remote && (
+                                                        <span className="flex items-center gap-1 text-xs text-muted">
+                                                            <Wifi size={11} />
+                                                            Remote
+                                                        </span>
+                                                    )}
+                                                </div>
+                                                <p className="mt-1 font-mono text-xs text-muted">
                                                     {role.from} – {role.to}
-                                                </span>
-                                                {role.remote && (
-                                                    <span className="flex items-center gap-1 text-xs text-slate-500 dark:text-slate-400">
-                                                        <Wifi size={11} />
-                                                        Remote
-                                                    </span>
-                                                )}
-                                            </div>
-                                        </div>
-                                    ))}
-                                </div>
+                                                </p>
+                                            </li>
+                                        );
+                                    })}
+                                </ol>
 
                                 {/* Shared description */}
-                                <ul className="flex flex-col gap-2 border-t border-slate-200 dark:border-slate-700 pt-5">
+                                <ul className="flex flex-col gap-3.5 border-t border-line pt-6">
                                     {org.bullets.map((b, j) => (
-                                        <li key={j} className="flex gap-2 text-slate-600 dark:text-slate-300 text-sm">
-                                            <span className="text-cyan-600 dark:text-cyan-400 mt-1 shrink-0">▸</span>
+                                        <li key={j} className="flex gap-3 text-sm md:text-[15px] leading-relaxed text-foreground/75">
+                                            <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand" />
                                             {b}
                                         </li>
                                     ))}
                                 </ul>
-                            </div>
+                            </SpotlightCard>
                         </motion.div>
                     ))}
                 </div>

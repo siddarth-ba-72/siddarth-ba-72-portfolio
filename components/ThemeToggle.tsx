@@ -1,26 +1,39 @@
 "use client";
 
 import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
+import { useSyncExternalStore } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import { Sun, Moon } from "lucide-react";
 
 export default function ThemeToggle() {
-  const { theme, setTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-
-  // Avoid hydration mismatch — only render after mount
-  useEffect(() => setMounted(true), []);
+  const { resolvedTheme, setTheme } = useTheme();
+  // Avoid hydration mismatch — false during SSR/hydration, true once mounted on the client
+  const mounted = useSyncExternalStore(
+    () => () => {},
+    () => true,
+    () => false
+  );
   if (!mounted) return <div className="w-9 h-9" />;
 
-  const isDark = theme === "dark";
+  const isDark = resolvedTheme === "dark";
 
   return (
     <button
       onClick={() => setTheme(isDark ? "light" : "dark")}
       aria-label="Toggle theme"
-      className="w-9 h-9 flex items-center justify-center rounded-lg text-slate-400 dark:text-slate-400 hover:text-cyan-400 dark:hover:text-cyan-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+      className="relative w-9 h-9 grid place-items-center overflow-hidden rounded-xl border border-line bg-card text-muted hover:text-accent hover:border-accent/50 transition-colors"
     >
-      {isDark ? <Sun size={18} /> : <Moon size={18} />}
+      <AnimatePresence mode="wait" initial={false}>
+        <motion.span
+          key={isDark ? "sun" : "moon"}
+          initial={{ y: -20, opacity: 0, rotate: -90 }}
+          animate={{ y: 0, opacity: 1, rotate: 0 }}
+          exit={{ y: 20, opacity: 0, rotate: 90 }}
+          transition={{ duration: 0.2 }}
+        >
+          {isDark ? <Sun size={16} /> : <Moon size={16} />}
+        </motion.span>
+      </AnimatePresence>
     </button>
   );
 }
