@@ -6,6 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "preview": "next build && npx wrangler dev",
+    "deploy": "next build && npx wrangler deploy",
     "lint": "eslint"
   },
   "dependencies": {

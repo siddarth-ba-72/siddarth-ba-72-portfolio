@@ -1,6 +1,7 @@
 import type { NextConfig } from "next";
 
-const basePath = "/siddarth-ba-72-portfolio";
+// Empty for root-domain hosts (Cloudflare); GitHub Pages sets BASE_PATH to the repo sub-path.
+const basePath = process.env.BASE_PATH ?? "";
 
 const nextConfig: NextConfig = {
   devIndicators: false,
