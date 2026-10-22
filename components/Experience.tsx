@@ -1,7 +1,16 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { MapPin, Wifi } from "lucide-react";
+import {
+  BrainCircuit,
+  Layers,
+  MapPin,
+  Network,
+  Sprout,
+  Wifi,
+  Workflow,
+  type LucideIcon,
+} from "lucide-react";
 import SectionHeading from "./SectionHeading";
 import SpotlightCard from "./SpotlightCard";
 
@@ -12,11 +21,18 @@ interface Role {
   remote?: boolean;
 }
 
+interface Highlight {
+  icon: LucideIcon;
+  title: string;
+  text: string;
+}
+
 interface Organization {
   company: string;
   location: string;
   roles: Role[];
-  bullets: string[];
+  highlights: Highlight[];
+  stack: string[];
 }
 
 const experiences: Organization[] = [
@@ -28,12 +44,44 @@ const experiences: Organization[] = [
       { title: "Analyst Developer",           from: "Jun 2024", to: "Apr 2025" },
       { title: "Intern — Trainee",            from: "Feb 2024", to: "May 2024", remote: true },
     ],
-    bullets: [
-      "Designed and delivered a project life cycle tracking feature using Spring Boot and Angular, making the tool a single source of truth across organizational hierarchies, reducing manual tracking and duplication.",
-      "Refined the event-driven architecture using IBM MQ and Spring Application Events, partnering with downstream teams to ensure seamless data flow for metric computation and reporting across teams.",
-      "Developed and maintained an enterprise workforce resource management platform for a leading global fin-tech company, building RESTful APIs with Spring Boot to power a resource-allocation dashboard within a microservices ecosystem.",
-      "Focused on learning and contributing to Java and Spring Boot based backend development; implemented a demo project showcasing Spring Boot microservices and REST API design.",
+    highlights: [
+      {
+        icon: Layers,
+        title: "Full-stack feature delivery",
+        text: "Designed and shipped an end-to-end feature that became the single source of truth across teams, cutting manual tracking and duplicate work.",
+      },
+      {
+        icon: Workflow,
+        title: "Event-driven architecture",
+        text: "Refined asynchronous messaging flows, partnering with downstream teams to keep data reliably feeding metrics and reporting.",
+      },
+      {
+        icon: Network,
+        title: "Microservices & REST APIs",
+        text: "Built and maintained RESTful services within a microservices ecosystem for an enterprise fin-tech platform.",
+      },
+      {
+        icon: Sprout,
+        title: "Backend foundations",
+        text: "Ramped up on Java backend development as a trainee, building a demo microservices app around clean REST API design.",
+      },
     ],
+    stack: ["Java", "Spring Boot", "Angular", "IBM MQ", "Spring Events", "REST APIs", "Microservices", "Angular"],
+  },
+  {
+    company: "International Institute of Information Technology Bangalore",
+    location: "Bengaluru, India",
+    roles: [
+      { title: "Machine Learning Research Intern", from: "Aug 2023", to: "Oct 2023" },
+    ],
+    highlights: [
+      {
+        icon: BrainCircuit,
+        title: "Applied ML research",
+        text: "Built and evaluated supervised classification models to distinguish participant groups in a health and wellness research study.",
+      },
+    ],
+    stack: ["Machine Learning", "Classification", "Model Evaluation"],
   },
 ];
 
@@ -120,15 +168,41 @@ export default function Experience() {
                                     })}
                                 </ol>
 
-                                {/* Shared description */}
-                                <ul className="flex flex-col gap-3.5 border-t border-line pt-6">
-                                    {org.bullets.map((b, j) => (
-                                        <li key={j} className="flex gap-3 text-sm md:text-[15px] leading-relaxed text-foreground/75">
-                                            <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand" />
-                                            {b}
-                                        </li>
-                                    ))}
+                                {/* Highlights */}
+                                <ul className="grid gap-3 border-t border-line pt-6 md:grid-cols-2">
+                                    {org.highlights.map(({ icon: Icon, title, text }, j) => {
+                                        const lone = j === org.highlights.length - 1 && j % 2 === 0;
+                                        return (
+                                            <li
+                                                key={title}
+                                                className={`rounded-xl border border-line bg-foreground/[0.02] p-4 ${lone ? "md:col-span-2" : ""}`}
+                                            >
+                                                <div className="flex items-center gap-2.5">
+                                                    <span className="grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-accent/10 text-accent">
+                                                        <Icon size={16} />
+                                                    </span>
+                                                    <h4 className="font-semibold text-sm md:text-[15px]">{title}</h4>
+                                                </div>
+                                                <p className="mt-2.5 text-sm leading-relaxed text-muted">{text}</p>
+                                            </li>
+                                        );
+                                    })}
                                 </ul>
+
+                                {/* Tech stack */}
+                                <div className="mt-6 flex flex-wrap items-center gap-2">
+                                    <span className="mr-1 font-mono text-[11px] uppercase tracking-widest text-muted">
+                                        Stack
+                                    </span>
+                                    {org.stack.map((tech) => (
+                                        <span
+                                            key={tech}
+                                            className="rounded-md border border-accent/20 bg-accent/10 px-2 py-1 font-mono text-xs text-accent"
+                                        >
+                                            {tech}
+                                        </span>
+                                    ))}
+                                </div>
                             </SpotlightCard>
                         </motion.div>
                     ))}
