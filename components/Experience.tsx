@@ -2,11 +2,11 @@
 
 import { motion } from "framer-motion";
 import {
+  Boxes,
   BrainCircuit,
-  Layers,
+  Gauge,
   MapPin,
-  Network,
-  Sprout,
+  ShieldCheck,
   Wifi,
   Workflow,
   type LucideIcon,
@@ -46,27 +46,27 @@ const experiences: Organization[] = [
     ],
     highlights: [
       {
-        icon: Layers,
-        title: "Full-stack feature delivery",
-        text: "Designed and shipped an end-to-end feature that became the single source of truth across teams, cutting manual tracking and duplicate work.",
+        icon: Boxes,
+        title: "Monolith to microservices",
+        text: "Migrated a legacy Java 8 / Ant / Spring MVC monolith to Spring Boot 2.7 microservices on Java 17 and Gradle 8.",
       },
       {
         icon: Workflow,
-        title: "Event-driven architecture",
-        text: "Refined asynchronous messaging flows, partnering with downstream teams to keep data reliably feeding metrics and reporting.",
+        title: "Async messaging & retries",
+        text: "Replaced synchronous REST calls with IBM MQ and a database-backed queue, with Spring Retry handling failed downstream calls. Cut API execution time by ~60%.",
       },
       {
-        icon: Network,
-        title: "Microservices & REST APIs",
-        text: "Built and maintained RESTful services within a microservices ecosystem for an enterprise fin-tech platform.",
+        icon: Gauge,
+        title: "Query & cache tuning",
+        text: "Tuned Spring Data JPA / Hibernate queries and added application-level caching, bringing API latency down by ~70%.",
       },
       {
-        icon: Sprout,
-        title: "Backend foundations",
-        text: "Ramped up on Java backend development as a trainee, building a demo microservices app around clean REST API design.",
+        icon: ShieldCheck,
+        title: "Security hardening",
+        text: "Configured Spring Security with CORS, CSRF protection and a strict Content Security Policy to close OWASP Top 10 gaps.",
       },
     ],
-    stack: ["Java", "Spring Boot", "Angular", "IBM MQ", "Spring Events", "REST APIs", "Microservices", "Angular"],
+    stack: ["Java 17", "Spring Boot", "Spring Data JPA", "Spring Security", "Spring Batch", "IBM MQ", "Gradle", "JUnit 5", "Grafana", "Angular"],
   },
   {
     company: "International Institute of Information Technology Bangalore",
