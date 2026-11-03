@@ -1,0 +1,654 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-03T05:00:19+00:00",
+  "title": "Design System: Siddarth Ambannavar Portfolio",
+  "extensions": {
+    "colorMeta": {
+      "periwinkle-accent": {
+        "role": "primary",
+        "displayName": "Periwinkle Signal",
+        "canonical": "#9a9dff",
+        "tonalRamp": [
+          "#1f1f33",
+          "#3e3f66",
+          "#5c5e99",
+          "#7b7ecc",
+          "#aeb1ff",
+          "#c7c9ff",
+          "#e1e2ff",
+          "#f5f5ff"
+        ],
+        "theme": "dark"
+      },
+      "periwinkle-accent-soft": {
+        "role": "primary",
+        "displayName": "Periwinkle Wash",
+        "canonical": "rgba(154, 157, 255, 0.1)",
+        "theme": "dark"
+      },
+      "periwinkle-accent-line": {
+        "role": "primary",
+        "displayName": "Periwinkle Hairline",
+        "canonical": "rgba(154, 157, 255, 0.32)",
+        "theme": "dark"
+      },
+      "indigo-accent": {
+        "role": "primary",
+        "displayName": "Indigo Signal",
+        "canonical": "#4f46e5",
+        "tonalRamp": [
+          "#100e2e",
+          "#201c5c",
+          "#2f2a89",
+          "#3f38b7",
+          "#726bea",
+          "#9e99f1",
+          "#cac8f7",
+          "#edecfc"
+        ],
+        "theme": "light"
+      },
+      "indigo-accent-soft": {
+        "role": "primary",
+        "displayName": "Indigo Wash",
+        "canonical": "rgba(79, 70, 229, 0.08)",
+        "theme": "light"
+      },
+      "indigo-accent-line": {
+        "role": "primary",
+        "displayName": "Indigo Hairline",
+        "canonical": "rgba(79, 70, 229, 0.28)",
+        "theme": "light"
+      },
+      "navy-ground": {
+        "role": "neutral",
+        "displayName": "Navy Ground",
+        "canonical": "#0a0f1d",
+        "tonalRamp": [
+          "#020306",
+          "#04060c",
+          "#060911",
+          "#080c17",
+          "#3b3f4a",
+          "#787b83",
+          "#b6b7bb",
+          "#e6e7e8"
+        ],
+        "theme": "dark"
+      },
+      "navy-raised": {
+        "role": "neutral",
+        "displayName": "Navy Raised",
+        "canonical": "#0e1426",
+        "tonalRamp": [
+          "#030408",
+          "#06080f",
+          "#080c17",
+          "#0b101e",
+          "#3e4351",
+          "#7a7e88",
+          "#b7b8be",
+          "#e7e8e9"
+        ],
+        "theme": "dark"
+      },
+      "navy-card": {
+        "role": "neutral",
+        "displayName": "Navy Card",
+        "canonical": "#10172b",
+        "tonalRamp": [
+          "#030509",
+          "#060911",
+          "#0a0e1a",
+          "#0d1222",
+          "#404555",
+          "#7c7f8a",
+          "#b7b9bf",
+          "#e7e8ea"
+        ],
+        "theme": "dark"
+      },
+      "navy-inset": {
+        "role": "neutral",
+        "displayName": "Navy Inset",
+        "canonical": "#151d35",
+        "tonalRamp": [
+          "#04060b",
+          "#080c15",
+          "#0d1120",
+          "#11172a",
+          "#444a5d",
+          "#7e8390",
+          "#b9bbc2",
+          "#e8e8eb"
+        ],
+        "theme": "dark"
+      },
+      "navy-line": {
+        "role": "neutral",
+        "displayName": "Navy Line",
+        "canonical": "#1e2843",
+        "tonalRamp": [
+          "#06080d",
+          "#0c101b",
+          "#121828",
+          "#182036",
+          "#4b5369",
+          "#838998",
+          "#bcbec7",
+          "#e8eaec"
+        ],
+        "theme": "dark"
+      },
+      "navy-line-strong": {
+        "role": "neutral",
+        "displayName": "Navy Line Strong",
+        "canonical": "#2b3757",
+        "tonalRamp": [
+          "#090b11",
+          "#111623",
+          "#1a2134",
+          "#222c46",
+          "#555f79",
+          "#8a91a3",
+          "#bfc3cd",
+          "#eaebee"
+        ],
+        "theme": "dark"
+      },
+      "navy-fg": {
+        "role": "neutral",
+        "displayName": "Navy Fg",
+        "canonical": "#e7eaf4",
+        "tonalRamp": [
+          "#2e2f31",
+          "#5c5e62",
+          "#8b8c92",
+          "#b9bbc3",
+          "#eceef6",
+          "#f2f3f9",
+          "#f8f9fc",
+          "#fdfdfe"
+        ],
+        "theme": "dark"
+      },
+      "navy-muted": {
+        "role": "neutral",
+        "displayName": "Navy Muted",
+        "canonical": "#a6aec6",
+        "tonalRamp": [
+          "#212328",
+          "#42464f",
+          "#646877",
+          "#858b9e",
+          "#b8bed1",
+          "#ced2e0",
+          "#e4e7ee",
+          "#f6f7f9"
+        ],
+        "theme": "dark"
+      },
+      "navy-subtle": {
+        "role": "neutral",
+        "displayName": "Navy Subtle",
+        "canonical": "#8b94b0",
+        "tonalRamp": [
+          "#1c1e23",
+          "#383b46",
+          "#53596a",
+          "#6f768d",
+          "#a2a9c0",
+          "#bfc4d4",
+          "#dcdfe7",
+          "#f3f4f7"
+        ],
+        "theme": "dark"
+      },
+      "paper-ground": {
+        "role": "neutral",
+        "displayName": "Paper Ground",
+        "canonical": "#ffffff",
+        "tonalRamp": [
+          "#333333",
+          "#666666",
+          "#999999",
+          "#cccccc",
+          "#ffffff",
+          "#ffffff",
+          "#ffffff",
+          "#ffffff"
+        ],
+        "theme": "light"
+      },
+      "paper-raised": {
+        "role": "neutral",
+        "displayName": "Paper Raised",
+        "canonical": "#f7f8fc",
+        "tonalRamp": [
+          "#313232",
+          "#636365",
+          "#949597",
+          "#c6c6ca",
+          "#f9f9fd",
+          "#fbfbfd",
+          "#fdfdfe",
+          "#fefeff"
+        ],
+        "theme": "light"
+      },
+      "paper-card": {
+        "role": "neutral",
+        "displayName": "Paper Card",
+        "canonical": "#ffffff",
+        "tonalRamp": [
+          "#333333",
+          "#666666",
+          "#999999",
+          "#cccccc",
+          "#ffffff",
+          "#ffffff",
+          "#ffffff",
+          "#ffffff"
+        ],
+        "theme": "light"
+      },
+      "paper-inset": {
+        "role": "neutral",
+        "displayName": "Paper Inset",
+        "canonical": "#f3f4fa",
+        "tonalRamp": [
+          "#313132",
+          "#616264",
+          "#929296",
+          "#c2c3c8",
+          "#f5f6fb",
+          "#f8f9fc",
+          "#fbfcfe",
+          "#fefefe"
+        ],
+        "theme": "light"
+      },
+      "paper-line": {
+        "role": "neutral",
+        "displayName": "Paper Line",
+        "canonical": "#e4e7f0",
+        "tonalRamp": [
+          "#2e2e30",
+          "#5b5c60",
+          "#898b90",
+          "#b6b9c0",
+          "#e9ecf3",
+          "#f0f2f7",
+          "#f7f8fa",
+          "#fcfdfe"
+        ],
+        "theme": "light"
+      },
+      "paper-line-strong": {
+        "role": "neutral",
+        "displayName": "Paper Line Strong",
+        "canonical": "#d3d8e6",
+        "tonalRamp": [
+          "#2a2b2e",
+          "#54565c",
+          "#7f828a",
+          "#a9adb8",
+          "#dce0eb",
+          "#e7eaf1",
+          "#f2f3f8",
+          "#fbfbfc"
+        ],
+        "theme": "light"
+      },
+      "ink-fg": {
+        "role": "neutral",
+        "displayName": "Ink Fg",
+        "canonical": "#0f1222",
+        "tonalRamp": [
+          "#030407",
+          "#06070e",
+          "#090b14",
+          "#0c0e1b",
+          "#3f414e",
+          "#7b7d85",
+          "#b7b8bd",
+          "#e7e7e9"
+        ],
+        "theme": "light"
+      },
+      "ink-muted": {
+        "role": "neutral",
+        "displayName": "Ink Muted",
+        "canonical": "#4a5068",
+        "tonalRamp": [
+          "#0f1015",
+          "#1e202a",
+          "#2c303e",
+          "#3b4053",
+          "#6e7386",
+          "#9b9fac",
+          "#c9cad2",
+          "#edeef0"
+        ],
+        "theme": "light"
+      },
+      "ink-subtle": {
+        "role": "neutral",
+        "displayName": "Ink Subtle",
+        "canonical": "#646b85",
+        "tonalRamp": [
+          "#14151b",
+          "#282b35",
+          "#3c4050",
+          "#50566a",
+          "#83899d",
+          "#aaaebc",
+          "#d0d3da",
+          "#f0f0f3"
+        ],
+        "theme": "light"
+      }
+    },
+    "themes": {
+      "dark": {
+        "default": true,
+        "selector": ".dark",
+        "note": "Deep navy ground; tokens navy-* and periwinkle-*; solid = periwinkle-accent, solid-fg = navy-ground"
+      },
+      "light": {
+        "selector": ":root",
+        "note": "White ground; tokens paper-*, ink-* and indigo-*; solid = indigo-accent, solid-fg = #ffffff"
+      },
+      "cssVariables": [
+        "--bg",
+        "--bg-raised",
+        "--bg-card",
+        "--bg-inset",
+        "--line",
+        "--line-strong",
+        "--fg",
+        "--fg-muted",
+        "--fg-subtle",
+        "--accent",
+        "--accent-soft",
+        "--accent-line",
+        "--solid",
+        "--solid-fg",
+        "--grid-line"
+      ]
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "The name in the opening screen, from lg."
+      },
+      "display-sm": {
+        "displayName": "Display (sm)",
+        "purpose": "The name from sm to lg."
+      },
+      "display-mobile": {
+        "displayName": "Display (mobile)",
+        "purpose": "The name below sm."
+      },
+      "role-rotator": {
+        "displayName": "Role Line",
+        "purpose": "Rotating role under the name; 1.25rem below sm."
+      },
+      "label-mono-md": {
+        "displayName": "Label Mono (md)",
+        "purpose": "Skills tags."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section titles; 1.875rem below md."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Card and organization titles."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Card prose in muted."
+      },
+      "body-lead": {
+        "displayName": "Body Lead",
+        "purpose": "Hero summary from sm up (16px below)."
+      },
+      "label-mono": {
+        "displayName": "Label Mono",
+        "purpose": "Window paths and meta, tags, dates, status."
+      },
+      "nav-mono": {
+        "displayName": "Nav Mono",
+        "purpose": "Desktop nav links (user-pinned mono)."
+      }
+    },
+    "shadows": [],
+    "borders": [
+      {
+        "name": "hairline",
+        "value": "1px solid var(--line)",
+        "purpose": "All structural edges."
+      },
+      {
+        "name": "hairline-strong",
+        "value": "1px solid var(--line-strong)",
+        "purpose": "Tags, secondary buttons, photo frames, hover border."
+      },
+      {
+        "name": "focus",
+        "value": "2px solid var(--accent); outline-offset: 2px; border-radius: 4px",
+        "purpose": "Global focus-visible ring."
+      }
+    ],
+    "motion": [
+      {
+        "name": "rise",
+        "value": "translateY(16px) → none, 0.8s cubic-bezier(0.16, 1, 0.3, 1) both, 70ms stagger",
+        "purpose": "Single entrance in the opening screen; transform only so content stays visible."
+      },
+      {
+        "name": "nav-indicator",
+        "value": "tween 0.35s cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Active nav highlight sliding between links."
+      },
+      {
+        "name": "role-rotate",
+        "value": "every 2.8s; y 100% → 0 → -100% with opacity, 0.35s cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "User-pinned rotating role under the name."
+      },
+      {
+        "name": "caret-blink",
+        "value": "blink 1s steps(2, start) infinite (visibility)",
+        "purpose": "2px accent caret after the rotating role."
+      },
+      {
+        "name": "hover-nudge",
+        "value": "translate 2px",
+        "purpose": "Arrow icons on buttons and links."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "animation and transition durations 0.01ms; scroll-behavior auto",
+        "purpose": "prefers-reduced-motion: reduce."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sm",
+        "value": "640px"
+      },
+      {
+        "name": "md",
+        "value": "768px"
+      },
+      {
+        "name": "lg",
+        "value": "1024px"
+      },
+      {
+        "name": "xl",
+        "value": "1280px"
+      }
+    ],
+    "textures": [
+      {
+        "name": "measuring-grid",
+        "value": "1px lines in var(--grid-line) on a 56px grid, masked to fade at 40%",
+        "purpose": "Behind the opening screen only."
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Window",
+      "kind": "card",
+      "refersTo": "window",
+      "description": "Signature container: hairline card with a bar of three muted dots, a mono path and right-aligned meta.",
+      "html": "<div class=\"ds-window\"><div class=\"ds-window-bar\"><span class=\"ds-dot\"></span><span class=\"ds-dot\"></span><span class=\"ds-dot\"></span><span class=\"ds-path\">~/talent-lens-ai</span><span class=\"ds-meta\">live</span></div><div class=\"ds-window-body\"><h3 class=\"ds-title\">Talent-Lens-AI</h3><p class=\"ds-body\">Full-stack AI application taken from idea to a working product.</p></div></div>",
+      "css": ".ds-window{display:flex;flex-direction:column;overflow:hidden;border-radius:6px;border:1px solid var(--line);background:var(--bg-card);color:var(--fg);font-family:var(--font-geist-sans),ui-sans-serif,system-ui,sans-serif;transition:border-color .15s}.ds-window:hover{border-color:var(--line-strong)}.ds-window-bar{display:flex;align-items:center;gap:6px;height:40px;padding:0 16px;border-bottom:1px solid var(--line);background:var(--bg-raised)}.ds-dot{width:10px;height:10px;border-radius:9999px;background:var(--line-strong);flex-shrink:0}.ds-path{margin-left:12px;font-family:var(--font-geist-mono),ui-monospace,monospace;font-size:12px;color:var(--fg-subtle);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.ds-meta{margin-left:auto;padding-left:12px;font-family:var(--font-geist-mono),ui-monospace,monospace;font-size:12px;color:var(--fg-subtle)}.ds-window-body{padding:24px}.ds-title{margin:0;font-size:1.25rem;font-weight:700;letter-spacing:-0.025em}.ds-body{margin:16px 0 0;font-size:15px;line-height:1.625;color:var(--fg-muted)}"
+    },
+    {
+      "name": "Photo Window",
+      "kind": "card",
+      "refersTo": "photo-window",
+      "description": "Hero portrait: square photo filling a ~/siddarth/profile.png window, two-line caption. Right of the text from lg (up to 25rem); leads the hero below lg (up to 18rem, 20rem from sm).",
+      "html": "<div class=\"ds-pwin\"><div class=\"ds-pwin-bar\"><span class=\"ds-pdot\"></span><span class=\"ds-pdot\"></span><span class=\"ds-pdot\"></span><span class=\"ds-ppath\">~/siddarth/profile.png</span></div><div class=\"ds-pwin-body\"><div class=\"ds-photo\" role=\"img\" aria-label=\"Profile photo\"></div><div class=\"ds-caption\"><p class=\"ds-cap-role\">Associate Software Engineer</p><p class=\"ds-cap-meta\">Wissen Technology · Bengaluru, IN</p></div></div></div>",
+      "css": ".ds-pwin{max-width:25rem;margin-left:auto;overflow:hidden;border-radius:6px;border:1px solid var(--line);background:var(--bg-card);color:var(--fg);font-family:var(--font-geist-sans),ui-sans-serif,system-ui,sans-serif}.ds-pwin-bar{display:flex;align-items:center;gap:6px;height:40px;padding:0 16px;border-bottom:1px solid var(--line);background:var(--bg-raised)}.ds-pdot{width:10px;height:10px;border-radius:9999px;background:var(--line-strong)}.ds-ppath{margin-left:12px;font-family:var(--font-geist-mono),ui-monospace,monospace;font-size:12px;color:var(--fg-subtle)}.ds-pwin-body{padding:12px}.ds-photo{aspect-ratio:1/1;width:100%;border-radius:4px;background:var(--bg-inset)}.ds-caption{padding:16px 8px 6px}.ds-cap-role{margin:0;font-weight:600}.ds-cap-meta{margin:2px 0 0;font-size:14px;color:var(--fg-muted)}"
+    },
+    {
+      "name": "Status",
+      "kind": "custom",
+      "description": "Still dot plus a word; accent for live/current, subtle for not-live.",
+      "html": "<span class=\"ds-status\"><span class=\"ds-status-dot\"></span>live</span> <span class=\"ds-status ds-status-muted\"><span class=\"ds-status-dot\"></span>source</span>",
+      "css": ".ds-status{display:inline-flex;align-items:center;gap:6px;font-family:var(--font-geist-mono),ui-monospace,monospace;font-size:12px;color:var(--accent);margin-right:16px}.ds-status-dot{width:6px;height:6px;border-radius:9999px;background:var(--accent)}.ds-status-muted{color:var(--fg-subtle)}.ds-status-muted .ds-status-dot{background:var(--fg-subtle)}"
+    },
+    {
+      "name": "Tag",
+      "kind": "chip",
+      "refersTo": "tag",
+      "description": "Small (default) mono stack label on an inset fill; static, never a filter.",
+      "html": "<span class=\"ds-tag\">Spring Boot</span><span class=\"ds-tag\">IBM MQ</span><span class=\"ds-tag\">Java 17</span>",
+      "css": ".ds-tag{display:inline-flex;align-items:center;margin:0 6px 6px 0;border-radius:6px;border:1px solid var(--line-strong);background:var(--bg-inset);padding:4px 8px;font-family:var(--font-geist-mono),ui-monospace,monospace;font-size:12px;color:var(--fg-muted)}"
+    },
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Solid accent fill; the one actionable call per group.",
+      "html": "<a class=\"ds-btn-primary\" href=\"#\">View projects <svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></a>",
+      "css": ".ds-btn-primary{display:inline-flex;align-items:center;gap:8px;height:44px;padding:0 20px;border-radius:6px;background:var(--solid);color:var(--solid-fg);font-family:var(--font-geist-sans),ui-sans-serif,system-ui,sans-serif;font-size:14px;font-weight:600;text-decoration:none;transition:opacity .15s}.ds-btn-primary svg{transition:transform .15s}.ds-btn-primary:hover{opacity:.9}.ds-btn-primary:hover svg{transform:translateX(2px)}.ds-btn-primary:focus-visible{outline:2px solid var(--accent);outline-offset:2px}"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Card fill with strong hairline; paired beside the primary.",
+      "html": "<a class=\"ds-btn-secondary\" href=\"#\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4\"/><path d=\"m7 10 5 5 5-5\"/><path d=\"M12 15V3\"/></svg>Resume</a>",
+      "css": ".ds-btn-secondary{display:inline-flex;align-items:center;gap:8px;height:44px;padding:0 20px;border-radius:6px;border:1px solid var(--line-strong);background:var(--bg-card);color:var(--fg);font-family:var(--font-geist-sans),ui-sans-serif,system-ui,sans-serif;font-size:14px;font-weight:600;text-decoration:none;transition:border-color .15s}.ds-btn-secondary:hover{border-color:color-mix(in srgb,var(--fg) 40%,transparent)}.ds-btn-secondary:focus-visible{outline:2px solid var(--accent);outline-offset:2px}"
+    },
+    {
+      "name": "Icon Button",
+      "kind": "button",
+      "refersTo": "button-icon",
+      "description": "36px square for theme toggle, socials and menu.",
+      "html": "<button class=\"ds-btn-icon\" aria-label=\"Switch theme\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"12\" cy=\"12\" r=\"4\"/><path d=\"M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41\"/></svg></button>",
+      "css": ".ds-btn-icon{display:grid;place-items:center;width:36px;height:36px;border-radius:6px;border:1px solid var(--line);background:var(--bg-card);color:var(--fg-muted);cursor:pointer;transition:border-color .15s,color .15s}.ds-btn-icon:hover{border-color:var(--line-strong);color:var(--fg)}.ds-btn-icon:focus-visible{outline:2px solid var(--accent);outline-offset:2px}"
+    },
+    {
+      "name": "Availability Pill",
+      "kind": "chip",
+      "refersTo": "status-pill",
+      "description": "Accent wash pill wrapping a Status; the open-to-work signal.",
+      "html": "<p class=\"ds-pill\"><span class=\"ds-pill-dot\"></span>Open to new opportunities</p>",
+      "css": ".ds-pill{display:inline-flex;align-items:center;gap:6px;margin:0;border-radius:9999px;border:1px solid var(--accent-line);background:var(--accent-soft);padding:4px 12px;font-family:var(--font-geist-mono),ui-monospace,monospace;font-size:12px;color:var(--accent)}.ds-pill-dot{width:6px;height:6px;border-radius:9999px;background:var(--accent)}"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Opaque bar with mono links; active link gets accent text on an accent wash.",
+      "html": "<nav class=\"ds-nav\"><span class=\"ds-mono-tile\">SA</span><a class=\"ds-nav-link\" href=\"#\">About</a><a class=\"ds-nav-link is-active\" href=\"#\">Projects</a><a class=\"ds-nav-link\" href=\"#\">Experience</a><a class=\"ds-nav-link\" href=\"#\">Skills</a></nav>",
+      "css": ".ds-nav{display:flex;align-items:center;gap:4px;height:64px;padding:0 20px;background:var(--bg);border-bottom:1px solid var(--line)}.ds-mono-tile{display:grid;place-items:center;width:32px;height:32px;margin-right:16px;border-radius:6px;border:1px solid var(--line-strong);background:var(--bg-raised);font-family:var(--font-geist-mono),ui-monospace,monospace;font-size:12px;font-weight:600;color:var(--accent)}.ds-nav-link{display:block;border-radius:6px;padding:6px 12px;font-family:var(--font-geist-mono),ui-monospace,monospace;font-size:13px;color:var(--fg-muted);text-decoration:none;transition:color .15s,background .35s cubic-bezier(.16,1,.3,1)}.ds-nav-link:hover{color:var(--fg)}.ds-nav-link.is-active{color:var(--accent);background:var(--accent-soft)}.ds-nav-link:focus-visible{outline:2px solid var(--accent);outline-offset:2px}"
+    },
+    {
+      "name": "Project Card Actions",
+      "kind": "button",
+      "refersTo": "button-card-live",
+      "description": "Live demo as a filled accent button with a still dot; Source as an outline button.",
+      "html": "<div class=\"ds-card-actions\"><a class=\"ds-btn-live\" href=\"#\"><span class=\"ds-live-dot\"></span>Live demo <svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M7 7h10v10\"/><path d=\"M7 17 17 7\"/></svg></a><a class=\"ds-btn-source\" href=\"#\"><svg width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4\"/><path d=\"M9 18c-4.51 2-5-2-7-2\"/></svg>Source</a></div>",
+      "css": ".ds-card-actions{display:flex;flex-wrap:wrap;gap:12px;padding-top:20px;border-top:1px solid var(--line)}.ds-btn-live,.ds-btn-source{display:inline-flex;align-items:center;gap:8px;height:40px;padding:0 16px;border-radius:6px;font-family:var(--font-geist-sans),ui-sans-serif,system-ui,sans-serif;font-size:14px;text-decoration:none}.ds-btn-live{background:var(--solid);color:var(--solid-fg);font-weight:600;transition:opacity .15s}.ds-btn-live svg{transition:transform .15s}.ds-btn-live:hover{opacity:.9}.ds-btn-live:hover svg{transform:translate(2px,-2px)}.ds-live-dot{width:8px;height:8px;border-radius:9999px;background:var(--solid-fg);box-shadow:0 0 0 2px color-mix(in srgb,var(--solid-fg) 40%,transparent)}.ds-btn-source{border:1px solid var(--line-strong);color:var(--fg-muted);font-weight:500;transition:border-color .15s,color .15s}.ds-btn-source:hover{border-color:color-mix(in srgb,var(--fg) 40%,transparent);color:var(--fg)}.ds-btn-live:focus-visible,.ds-btn-source:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}"
+    },
+    {
+      "name": "Rotating Role",
+      "kind": "custom",
+      "description": "User-pinned line under the name: mono accent prompt, role cycling every 2.8s, blinking 2px caret.",
+      "html": "<p class=\"ds-role\"><span class=\"ds-role-prompt\">&gt;</span><span class=\"ds-role-text\">Backend Engineer</span><span class=\"ds-caret\"></span></p>",
+      "css": ".ds-role{display:flex;align-items:center;gap:10px;height:36px;margin:0;overflow:hidden;font-family:var(--font-geist-sans),ui-sans-serif,system-ui,sans-serif;font-size:1.5rem;font-weight:500;color:var(--fg)}.ds-role-prompt{font-family:var(--font-geist-mono),ui-monospace,monospace;color:var(--accent)}.ds-role-text{white-space:nowrap;animation:ds-role-in .35s cubic-bezier(.16,1,.3,1) both}.ds-caret{width:2px;height:24px;background:var(--accent);animation:ds-blink 1s steps(2,start) infinite}@keyframes ds-role-in{from{transform:translateY(100%);opacity:0}to{transform:none;opacity:1}}@keyframes ds-blink{to{visibility:hidden}}@media (prefers-reduced-motion:reduce){.ds-role-text,.ds-caret{animation:none}}"
+    },
+    {
+      "name": "Skills Tag",
+      "kind": "chip",
+      "refersTo": "tag-md",
+      "description": "Medium tag for Skills: 14px mono medium in foreground.",
+      "html": "<span class=\"ds-tag-md\">Java 17</span><span class=\"ds-tag-md\">Spring Boot</span><span class=\"ds-tag-md\">Kafka</span>",
+      "css": ".ds-tag-md{display:inline-flex;align-items:center;margin:0 8px 8px 0;border-radius:6px;border:1px solid var(--line-strong);background:var(--bg-inset);padding:6px 12px;font-family:var(--font-geist-mono),ui-monospace,monospace;font-size:14px;font-weight:500;color:var(--fg)}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Engineer's Workspace",
+    "overview": "A calm workspace, built by an engineer, where every section is a working window. Content sits on flat cards one step off the ground, each topped by a window bar with three muted dots, a mono path such as `~/siddarth/profile.png`, and optional right-aligned meta (a year, a date range, `yaml`, or a live status). The reading voice is a heavy neo-grotesk sans. The machine voice is mono and only appears where a machine would print text: paths, tags, dates, config keys and values, nav labels.\n\nDark is the default theme: a polished deep-navy ground. Light is a white ground with the same structure. Both themes use one accent, indigo-violet. It means \"live, current, actionable\" and fills the primary button. Everything else is hairlines and three text tones. The system rejects the neon-gradient, glass-and-glow developer portfolio this site used to be. The surface stays flat and quiet, so the content carries the visual weight.\n\nThe density is moderate and easy to scan. Sections are tall bands split by full-bleed hairlines. Each band has a large heading, an optional one-line description, and windows on a 20px grid gap.",
+    "keyCharacteristics": [
+      "Every content block is a Window: hairline border, 6px corners, a mono-path bar.",
+      "Deep navy (dark, default) or white (light) ground. Surfaces step up tonally, never with shadows.",
+      "One indigo-violet accent for live, current and actionable things only.",
+      "Heavy sans for reading. Mono strictly for machine text.",
+      "Two sanctioned motions, both in the opening screen: a transform-only entrance rise and the rotating role line under the name. Reduced motion is respected."
+    ],
+    "rules": [
+      {
+        "name": "The One Signal Rule",
+        "body": "The accent is reserved for things that are live, current, or actionable. If something is not live, current, or actionable, it gets a neutral color.",
+        "section": "colors"
+      },
+      {
+        "name": "The Word-Beside-Dot Rule",
+        "body": "Status is never color alone. Every accent dot sits beside a word (`live`, `current`, `open to opportunities`).",
+        "section": "colors"
+      },
+      {
+        "name": "The Machine Voice Rule",
+        "body": "Use mono only for paths, tags, dates, config keys and values, handles, and nav labels. Never use mono for headings, paragraphs, or labels a person would write.",
+        "section": "typography"
+      },
+      {
+        "name": "The Heavy Sans Rule",
+        "body": "Use weight 700–800 with negative tracking for display, headline and title. Body copy stays at 400.",
+        "section": "typography"
+      },
+      {
+        "name": "The Hairline Rule",
+        "body": "Every edge is a 1px border in `line` or `line-strong`. No box-shadow, glow, blur, or backdrop-filter anywhere, including the fixed navbar, which is an opaque ground color.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** put every content block in a Window with a filesystem-style mono path and, where useful, right-aligned meta.",
+      "**Do** keep the accent for live, current, and actionable things: primary buttons, status, the active nav link, link hover, focus.",
+      "**Do** pair every status dot with a word.",
+      "**Do** separate surfaces with 1px hairlines and tonal steps. Strengthen the border on hover.",
+      "**Do** use 6px corners for cards and controls, and full rounding only for pills and dots.",
+      "**Do** keep sanctioned motion to the two pieces in the opening screen: the transform-only rise (16px, 0.8s, `cubic-bezier(0.16, 1, 0.3, 1)`, 70ms stagger), and the rotating role with its blinking caret. Content must stay visible if the rise never runs, and `prefers-reduced-motion` must collapse both.",
+      "**Do** make a live project's demo the filled accent button on its card. Source stays an outline button beside it.",
+      "**Do** keep both themes on the same token roles: deep navy ground in dark (default), white ground in light."
+    ],
+    "donts": [
+      "**Don't** use gradient fills, glows, blur, glass, or box-shadows. The only gradients in the build draw the 1px measuring-grid lines and their fade-out mask behind the opening screen.",
+      "**Don't** add a second accent hue, or bring back green as the theme color.",
+      "**Don't** set headings, paragraphs, or eyebrow/kicker labels in mono, uppercase, or wide tracking.",
+      "**Don't** put kicker or eyebrow labels above section headings. A section is a heading plus an optional one-line description.",
+      "**Don't** animate on scroll, or add looping, pulsing, or decorative motion beyond the rotating role and its caret. All other motion is for state changes and small hover nudges.",
+      "**Don't** lift cards on hover or give them elevation."
+    ]
+  }
+}

@@ -1,0 +1,34 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Departure Board sketch</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{width:1440px;height:900px;overflow:hidden;background:#8E9399;font-family:"Helvetica Neue",Arial,sans-serif;color:#F2F2EE}
+.frame{position:absolute;inset:28px;background:#111;border:6px solid #6F757B;padding:32px 40px}
+.top{display:flex;align-items:flex-end;gap:32px;padding-bottom:22px;border-bottom:2px solid #2a2a2a}
+.photo{width:150px;height:150px;background:linear-gradient(180deg,#555,#222);border:4px solid #6F757B}
+.name{font-size:68px;font-weight:800;letter-spacing:-0.01em;font-stretch:condensed;text-transform:uppercase;line-height:1}
+.role{margin-top:10px;font-size:24px;color:#cfcfc9}
+.acts{margin-left:auto;display:flex;gap:12px}
+.btn{height:48px;padding:0 20px;display:flex;align-items:center;font-weight:800;font-size:15px;border:2px solid #F2F2EE}
+.btn.a{background:#F2A93B;color:#111;border-color:#F2A93B}
+.cols,.row{display:grid;grid-template-columns:520px 1fr 170px 200px;gap:20px;align-items:center}
+.cols{height:52px;font-size:15px;color:#9a9a94;letter-spacing:.12em}
+.row{height:104px;border-top:1px solid #222}
+.flaps{display:flex;gap:4px}
+.flaps i{font-style:normal;width:34px;height:52px;background:#1d1d1d;display:grid;place-items:center;font-size:34px;font-weight:800;position:relative}
+.flaps i:after{content:"";position:absolute;left:0;right:0;top:50%;height:2px;background:#000}
+.stack{font-size:20px;color:#cfcfc9}
+.st{font-size:28px;font-weight:800;color:#F2A93B}
+.st.s{color:#F2F2EE}
+.lnk{font-size:20px;font-weight:700}
+</style></head><body>
+<div class="frame">
+ <div class="top"><div class="photo"></div><div><div class="name">Siddarth Ambannavar</div><div class="role">Backend engineer · Java / Spring Boot · ships AI products</div></div>
+ <div class="acts"><span class="btn a">RESUME</span><span class="btn">EMAIL</span></div></div>
+ <div class="cols"><span>PRODUCT</span><span>STACK</span><span>STATUS</span><span>PLATFORM</span></div>
+ <div class="row"><span class="flaps"><i>P</i><i>R</i><i>E</i><i>P</i><i>-</i><i>P</i><i>I</i><i>L</i><i>O</i><i>T</i></span><span class="stack">Spring Boot · FastAPI · React · AWS</span><span class="st">LIVE</span><span class="lnk">OPEN APP</span></div>
+ <div class="row"><span class="flaps"><i>T</i><i>A</i><i>L</i><i>E</i><i>N</i><i>T</i><i>L</i><i>E</i><i>N</i><i>S</i></span><span class="stack">FastAPI · OpenAI · PostgreSQL</span><span class="st">LIVE</span><span class="lnk">OPEN APP</span></div>
+ <div class="row"><span class="flaps"><i>D</i><i>A</i><i>T</i><i>A</i><i>T</i><i>R</i><i>A</i><i>C</i><i>E</i></span><span class="stack">FastAPI · Google ADK · Gemini</span><span class="st s">SOURCE</span><span class="lnk">GITHUB</span></div>
+ <div class="row"><span class="flaps"><i>P</i><i>H</i><i>A</i><i>R</i><i>M</i><i>A</i><i>+</i></span><span class="stack">Express · TypeScript · PostgreSQL</span><span class="st s">SOURCE</span><span class="lnk">GITHUB</span></div>
+</div>
+</body></html>
