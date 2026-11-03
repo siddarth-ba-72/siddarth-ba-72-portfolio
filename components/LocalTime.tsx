@@ -41,11 +41,9 @@ export default function LocalTime() {
   const activity = activities.find(([until]) => hour < until)![1];
 
   return (
-    <p className="flex items-center gap-2 font-mono text-xs text-muted">
-      <Clock size={12} className="shrink-0 text-accent" />
-      <span>
-        <span className="text-foreground">{display}</span> in Bengaluru · {activity}
-      </span>
+    <p className="text-xs text-subtle">
+      <Clock size={12} className="mr-1.5 inline-block -translate-y-px text-accent" aria-hidden="true" />
+      <span className="font-mono text-fg">{display}</span> in Bengaluru · {activity}
     </p>
   );
 }
