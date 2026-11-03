@@ -1,0 +1,63 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Release Log sketch</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{width:1440px;height:900px;overflow:hidden;background:#F4F5F1;color:#121714;font-family:"Helvetica Neue",Arial,sans-serif}
+.nav{height:56px;display:flex;align-items:center;gap:28px;padding:0 48px;border-bottom:1px solid #D3D8D2;font-size:14px}
+.nav b{margin-right:auto;font-size:15px}
+.grid{display:grid;grid-template-columns:200px 1fr;}
+.rail{padding:28px 0 0 48px;font-family:Menlo,monospace}
+.mast{background:#1E8A4F;color:#fff;height:330px}
+.mast .rail{color:#D9F2E3}
+.mast .rail .v{font-size:44px;font-weight:700;color:#fff;letter-spacing:-0.02em}
+.mast .body{display:grid;grid-template-columns:1fr 250px;gap:40px;padding:28px 48px 0 0}
+.name{font-size:104px;line-height:.92;font-weight:800;letter-spacing:-0.035em;font-stretch:expanded}
+.role{margin-top:22px;font-size:26px;font-weight:500}
+.acts{margin-top:26px;display:flex;gap:12px}
+.btn{height:48px;padding:0 22px;display:flex;align-items:center;font-size:15px;font-weight:700;border:2px solid #fff}
+.btn.solid{background:#fff;color:#121714}
+.photo{width:250px;height:270px;background:#0E1210 linear-gradient(180deg,#3d4a42,#1b231e);border:2px solid #fff}
+.latest{height:514px;border-bottom:1px solid #D3D8D2}
+.latest .rail .tag{display:inline-block;margin-top:14px;background:#1E8A4F;color:#fff;font-size:14px;padding:6px 10px;font-weight:700}
+.latest .body{display:grid;grid-template-columns:1fr 380px;gap:56px;padding:36px 48px 0 0}
+.title{font-size:72px;font-weight:800;letter-spacing:-0.03em;line-height:.98}
+.desc{margin-top:18px;font-size:18px;line-height:1.55;max-width:640px;color:#3C4640}
+.chips{margin-top:20px;display:flex;gap:8px;font-family:Menlo,monospace;font-size:13px}
+.chips span{border:1px solid #121714;padding:4px 8px}
+.links{margin-top:26px;display:flex;gap:12px}
+.older{border-left:1px solid #D3D8D2;padding-left:32px}
+.older div{padding:18px 0;border-bottom:1px solid #D3D8D2}
+.older .t1{font-size:40px;font-weight:800;letter-spacing:-0.02em}
+.older .t2{font-size:32px;font-weight:800;letter-spacing:-0.02em}
+.older .t3{font-size:26px;font-weight:800;letter-spacing:-0.02em}
+.older small{display:block;margin-top:6px;font-family:Menlo,monospace;font-size:13px;color:#55605A}
+</style></head><body>
+<div class="nav"><b>Siddarth Ambannavar</b><span>Releases</span><span>Experience</span><span>Skills</span><span>Certifications</span><span>Education</span><span>Resume</span><span>◐</span></div>
+<section class="mast grid">
+  <div class="rail"><div class="v">v2.0</div><div style="margin-top:8px;font-size:14px">current · since May 2025</div></div>
+  <div class="body">
+    <div>
+      <h1 class="name">Siddarth<br>Ambannavar</h1>
+      <p class="role">Backend engineer, Java &amp; Spring Boot. Ships AI products end to end.</p>
+      <div class="acts"><span class="btn solid">Resume PDF</span><span class="btn">Email</span><span class="btn">GitHub</span></div>
+    </div>
+    <div class="photo"></div>
+  </div>
+</section>
+<section class="latest grid">
+  <div class="rail"><div style="font-size:14px;color:#55605A">LATEST RELEASE</div><span class="tag">LIVE</span></div>
+  <div class="body">
+    <div>
+      <h2 class="title">Interview<br>Prep-Pilot-AI</h2>
+      <p class="desc">Create a topic, learn it with an AI tutor, stress-test yourself with generated questions and instant scoring, then finish with a mock interview evaluated in real time.</p>
+      <div class="chips"><span>Spring Boot</span><span>FastAPI</span><span>React</span><span>MongoDB</span><span>AWS</span><span>Docker</span></div>
+      <div class="links"><span class="btn solid" style="background:#1E8A4F;color:#fff;border-color:#1E8A4F">Open live app</span><span class="btn" style="border-color:#121714">Read source</span></div>
+    </div>
+    <div class="older">
+      <div><span class="t1">Talent-Lens-AI</span><small>LIVE · FastAPI · OpenAI · PostgreSQL</small></div>
+      <div><span class="t2">Data-Trace-Mind</span><small>SOURCE · Google ADK · Gemini</small></div>
+      <div><span class="t3">Pharma-Plus</span><small>SOURCE · Express · PostgreSQL</small></div>
+    </div>
+  </div>
+</section>
+</body></html>
